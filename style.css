@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Mono+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body{
+    font-family: "Press Start 2P", system-ui;
+    text-align: center;
+    background-color: #3498db;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: cornsilk;
+    font-weight: bold; 
+    font-size: 30px; 
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+}
+
+button{
+    height: 50px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: red;
+    box-shadow: 0 0 14px 5px rgb(255, 73, 109);
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    font-family: "Press Start 2P", system-ui;
+}
+
+button:hover{
+    background-color: cornflowerblue;
+    box-shadow: 0 0 14px 5px cyan;
+    transition: 0.5s;
+}
+
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(3,105px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.card{
+    padding-top: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    transform: rotateY(0deg);
+    box-shadow:  1px 1px 1px #ddd, 2px 2px 2px #ccc, 3px 3px 3px #bbb, 4px 4px 4px #aaa, 5px 5px 0px #acacac, 6px 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+}
+
+.card.flipped{
+    transform: rotateY(180deg);
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidd;
+    display: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.card.flipped img{
+    display: block;
+    backface-visibility: visible;
+
+    .card-cover{
+        width: 100%;
+        height: 100%;
+        background-color: cornflowerblue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        z-index: 1;
+        border-radius: 10px;
+        transition: opacity 0.4s ease;
+     
+    }
+}
+
+.labelName{
+    color: black;
+    font-size: 10px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    text-align: center;
+}
+
+#mensaje{
+    font-family: "Bangers", system-ui;
+    font-size: 30px;
+}
